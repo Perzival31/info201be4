@@ -6,12 +6,11 @@ games <- read.delim("Managerial_and_Decision_Economics_2013_Video_Games_Dataset.
   select(US.Sales..millions., Genre, Title, Console) %>% 
   arrange(Genre)
 
-print(head(average, 3))
-print(tail(average, 4))
-
 shinyServer(function(input, output) {
   
   output$overallPlot <- renderPlot({
+    
+    average <- games %>% group_by(Genre) %>% summarize(Sales.Mean = mean(US.Sales..millions.)) %>% arrange(Sales.Mean)
     
     ggplot(data = average) +
       geom_point(aes(x = Genre, y = Sales.Mean)) +
@@ -35,7 +34,10 @@ shinyServer(function(input, output) {
   })
   
   output$paragraph <- renderText({
-    paste0("paragraph")
+    paste("Apart from an obvious outliar of games with the '", tail(average$Genre, 1), 
+          "' genre (there are only 3 in a almost 2000 piece data set), the games with the 'Action, Sports' were the next highest overall.", 
+          " This page also shows the highest selling genre per console, based on the selection made. "
+           )
     
     
   })
