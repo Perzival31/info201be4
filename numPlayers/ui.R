@@ -12,6 +12,11 @@ shinyUI(fluidPage(
     # Sidebar with a slider input for number of bins
     sidebarLayout(
         sidebarPanel(
+            checkboxGroupInput("selectedConsole", label = h3("Select Consoles:"), 
+                                           choices = unique(games$Console),
+                               selected = unique(games$Console)
+                               
+            )
         ),
 
         # Show a plot of the generated distribution
