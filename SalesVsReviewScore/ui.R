@@ -3,6 +3,21 @@ library(tidyverse)
 
 games <- read.delim("Managerial_and_Decision_Economics_2013_Video_Games_Dataset.csv", sep = ",")
 shinyUI(fluidPage(navbarPage("Video Game Sales",
+    navbarMenu("Introduction",
+         tabPanel(
+             # Application title
+             titlePanel("Introduction"),
+             
+             mainPanel(
+                 
+                 img(src = "gaming.png", height = 200, width = 300),
+                 textOutput("introparagraph")
+                 
+             )
+             
+         )
+    ),
+    
     navbarMenu("Comparing Sales",
         tabPanel(
             # Application title
@@ -39,7 +54,8 @@ shinyUI(fluidPage(navbarPage("Video Game Sales",
                 # Show a plot of the generated distribution
                 mainPanel(
                     plotOutput("notSequelsalesPlot"),
-                    plotOutput("onlySequelsalesPlot")
+                    plotOutput("onlySequelsalesPlot"),
+                    textOutput("sequelParagraph")
                 )
             )
         ),
@@ -84,6 +100,18 @@ shinyUI(fluidPage(navbarPage("Video Game Sales",
                 )
             )
         )
+    ),
+    navbarMenu("Conclusion",
+           tabPanel(
+               # Application title
+               titlePanel("Conclusion"),
+               
+               mainPanel(
+                   htmlOutput("conclusionParagraph")
+                   
+               )
+               
+           )
     )
 
 )))
