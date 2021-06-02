@@ -17,8 +17,11 @@ gameGenres <- allGames %>%
 
 shinyServer(function(input, output) {
     
+<<<<<<< HEAD
 ################## Introduction ##########################
     
+=======
+>>>>>>> c449046eb53663421049e734274a4df8f565511e
     output$introparagraph <- renderText({
         paste0("In this project the group took a look at a dataset about game sales. This dataset has quite a bit of information, such as the developer, 
                average review of a game, genre, et cetera. We used the data to look how genre affect sales, if sales was corrolated with review score, the differences
@@ -29,6 +32,11 @@ shinyServer(function(input, output) {
         
         
     })
+<<<<<<< HEAD
+=======
+               
+    
+>>>>>>> c449046eb53663421049e734274a4df8f565511e
     
 ################### Sales Vs Review Scores #######################
     
