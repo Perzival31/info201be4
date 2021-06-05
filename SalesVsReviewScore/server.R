@@ -46,7 +46,7 @@ shinyServer(function(input, output) {
     output$reviewScoresParagraph <- renderText({
         paste0("This chart shows how review scores affect the overall sales of videogames and allows one to determine if there
                is a correlation between the two. You are able to change which console is being viewed at one time in order
-               to compare the data between consoles.q"
+               to compare the data between consoles."
                
         )
 
