@@ -66,7 +66,7 @@ shinyUI(fluidPage(navbarPage("Video Game Sales",
                                             
                                             sidebarLayout(
                                                 sidebarPanel(
-                                                    selectInput("select", label = h3("Select the Console of Choice"), 
+                                                    selectInput("con", label = h3("Select the Console of Choice"), 
                                                                 choices = unique(games$Console), 
                                                                 selected = 1),
                                                 ),

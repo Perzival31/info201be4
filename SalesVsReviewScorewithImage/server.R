@@ -100,7 +100,7 @@ shinyServer(function(input, output) {
     
     output$distPlot <- renderPlot({
         
-        gameGenres <- gameGenres %>% filter(input$select == Console)
+        gameGenres <- gameGenres %>% filter(input$con == Console)
         
         average <- gameGenres %>% group_by(Genre) %>% 
             summarize(Sales.Mean = mean(US.Sales..millions.)) %>% 
